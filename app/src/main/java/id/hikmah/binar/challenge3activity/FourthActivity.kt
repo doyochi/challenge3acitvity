@@ -14,22 +14,24 @@ class FourthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFourthBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        moveToFifthActivity()
+        binding.btnBack.setOnClickListener{
+            onBackPressed()
+        }
     }
 
-    private fun moveToFifthActivity(){
-        binding.btnTo5.setOnClickListener {
-            val usia = binding.inputUsia
-            val alamat = binding.inputAlamat
-            val pekerjaan = binding.inputPekerjaan
-            val bundle = Bundle()
-            bundle.putString("data_usia",usia.text.toString())
-            bundle.putString("data_alamat",alamat.text.toString())
-            bundle.putString("data_pekerjaan",pekerjaan.text.toString())
-            val intent = Intent (this, FifthActivity::class.java)
-            intent.putExtras(bundle)
-            startActivity(intent)
-        }
+    override fun onBackPressed(){
+        val intent = Intent()
+        val inUsia = binding.inputUsia.text.toString()
+        val inAlamat = binding.inputAlamat.text.toString()
+        val inPekerjaan = binding.inputPekerjaan.text.toString()
+        intent.putExtra("data_usia",inUsia)
+        intent.putExtra("data_alamat", inAlamat)
+        intent.putExtra("data_pekerjaan", inPekerjaan)
+        val dataPage4 = DataPage4(inUsia, inAlamat, inPekerjaan)
+        intent.putExtra("dataaaa",dataPage4)
+        Intent (this, ThirdActivity::class.java)
+        setResult(RESULT_OK, intent)
+        super.onBackPressed()
     }
 
 }

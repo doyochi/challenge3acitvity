@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
 
     <EditText
         android:id="@+id/input_nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Masukkan Nama"
-        app:layout_constraintBottom_toTopOf="@id/btn_to3"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:hint="Masukkan Nama"/>
 
     <Button
         android:id="@+id/btn_to3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go to Screen 2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_nama" />
+        android:text="Go to Screen 2"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
